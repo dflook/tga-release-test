@@ -1,0 +1,12 @@
+name: tga-release-test
+description: Test the release of a Terraform GitHub Actions actions
+author: Daniel Flook
+
+runs:
+  using: docker
+  image: docker://danielflook/terraform-github-actions-dev@sha256:4540e5ac985096899a16115b463251690183068c87290153aff3ca4f8d3f9900
+  entrypoint: /entrypoints/plan.sh
+
+branding:
+  icon: globe
+  color: purple
