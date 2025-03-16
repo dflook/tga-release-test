@@ -1,9 +1,8 @@
 name: Release
 
 on:
-  release:
-    types:
-      - released
+  schedule:
+    - cron: 30 * * * *
 
 permissions:
   contents: read
