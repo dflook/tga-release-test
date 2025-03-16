@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  release:
+    types:
+      - released
+
+permissions:
+  contents: read
+
+jobs:
+  image:
+    runs-on: ubuntu-24.04
+    name: Build release image
+    environment:
+      name: main-only
+    steps:
+      - name: Check variable is available
+        run: |
+          if [[ "$MY_VAR" == "hello" ]]; then
+            echo "OK"
+          else
+            echo "OH NO"
+            exit 1
+          fi
