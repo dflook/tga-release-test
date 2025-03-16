@@ -16,6 +16,8 @@ jobs:
       name: release
     steps:
       - name: Check variable is available
+        env:
+          MY_VAR: ${{ vars.MY_VAR }}
         run: |
           if [[ "$MY_VAR" == "hello" ]]; then
             echo "OK"
